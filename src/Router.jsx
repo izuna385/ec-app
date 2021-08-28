@@ -5,8 +5,8 @@ import {Login, Home} from './templates'
 const Router = () => {
     return (
         <Switch>
-            <Route exact path={"/login"} component={Login} />
-            <Route exact path={"(/)?"} component={Home} />
+            <Route path={"/login"} component={Login} />
+            <Route path={"(/)?"} component={Home} />
         </Switch>
     )
 }
