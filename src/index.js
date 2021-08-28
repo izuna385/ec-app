@@ -1,13 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Provider} from "react-redux";
+import createStore from "./reducks/stores/store";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+/* react-reduxのProviderは
+1. propsにstoreを渡す
+　ラップしたコンポーネントにstoreの情報を渡す
+
+2.ラップしたコンポーネント内で
+　react-reduxのconnect関数を使えるようにする
+　-> ReactとReduxを接続してstoreを変更できるようにする。
+ */
+
+export const store = createStore();
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <Provider store={store}>
+         <App />
+    </Provider>,
   document.getElementById('root')
 );
 

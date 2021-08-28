@@ -5,7 +5,7 @@ export const UsersReducer = (state = initialState.users, action) => {
     switch (action.type) {
         case Actions.SIGN_IN:
             return {
-                ...state,
+                ...state, // stateをコメントアウトした場合、action.payloadですべて上書きされる
                 ...action.payload // stateと重複するものは、 ...action.payload内のものに上書きされる。
             }
         default:
