@@ -5,7 +5,7 @@ import createStore from "./reducks/stores/store";
 import {ConnectedRouter} from "connected-react-router";
 import * as History from "history";
 import './index.css';
-import App from './App';
+import App from './App.jsx';
 import reportWebVitals from './reportWebVitals';
 
 
