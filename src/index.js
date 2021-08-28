@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from "react-redux";
 import createStore from "./reducks/stores/store";
+import {ConnectedRouter} from "connected-react-router";
+import * as History from "history";
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -15,12 +17,14 @@ import reportWebVitals from './reportWebVitals';
 　react-reduxのconnect関数を使えるようにする
 　-> ReactとReduxを接続してstoreを変更できるようにする。
  */
-
-export const store = createStore();
+const history = History.createBrowserHistory();
+export const store = createStore(history);
 
 ReactDOM.render(
     <Provider store={store}>
-         <App />
+         <ConnectedRouter history={history}>
+             <App />
+         </ConnectedRouter>
     </Provider>,
   document.getElementById('root')
 );
